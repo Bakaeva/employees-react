@@ -19,8 +19,6 @@ class App extends Component {
         { name: 'Carl W.', salary: 5000, increase: false, like: false, id: 3 }
       ]
     };
-    //this.nextId = 4;
-    //id: this.nextId++
   };
 
   deleteItem = (id) => {
@@ -61,7 +59,7 @@ class App extends Component {
           onDelete={this.deleteItem}
         />
         <EmployeesAddForm
-          onAdd={this.addItem} />
+          onSubmit={this.addItem} />
       </div>
     );
   };
