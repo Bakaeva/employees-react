@@ -44,6 +44,18 @@ class App extends Component {
     });
   };
 
+  onToggleIncrease = (id) => {
+    this.setState(({ data }) => ({
+      data: data.map(elem => (elem.id !== id) ? elem : { ...elem, increase: !elem.increase })
+    }));
+  };
+
+  onToggleLike = (id) => {
+    this.setState(({ data }) => ({
+      data: data.map(elem => (elem.id !== id) ? elem : { ...elem, like: !elem.like })
+    }));
+  };
+
   render() {
     return (
       <div className="app" >
@@ -57,6 +69,8 @@ class App extends Component {
         <EmployeesList
           data={this.state.data}
           onDelete={this.deleteItem}
+          onToggleIncrease={this.onToggleIncrease}
+          onToggleLike={this.onToggleLike}
         />
         <EmployeesAddForm
           onSubmit={this.addItem} />
