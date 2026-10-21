@@ -53,7 +53,9 @@ class App extends Component {
   render() {
     return (
       <div className="app" >
-        <AppInfo />
+        <AppInfo
+          total={this.state.data.length}
+          increased={this.state.data.filter(elem => elem.increase).length} />
 
         <div className="search-panel">
           <SearchPanel />
