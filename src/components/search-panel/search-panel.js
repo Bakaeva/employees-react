@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import './search-panel.css';
 
 class SearchPanel extends Component {
     constructor(props) {

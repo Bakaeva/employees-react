@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import styled from 'styled-components';
 import nextId from "react-id-generator";
 
 import AppInfo from '../app-info/app-info';
@@ -8,6 +9,15 @@ import EmployeesList from '../employees-list/employees-list';
 import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
 import './app.css';
+
+export const Wrapper = styled.div`
+  margin-top: 30px;
+  padding: 25px;
+  background-color: #3d5a80;
+  border-radius: 4px;
+  box-shadow: 15px 15px 30px rgba(0,0,0, .15);
+  color: #fff;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -96,13 +106,13 @@ class App extends Component {
           total={data.length}
           increased={data.filter(elem => elem.increase).length} />
 
-        <div className="search-panel">
+        <Wrapper>
           <SearchPanel onUpdateSearch={this.onUpdateSearch} />
           <AppFilter
             filterBtnId={filterBtnId}
             onFilterBtnClick={this.onFilterBtnClick}
           />
-        </div>
+        </Wrapper>
 
         <EmployeesList
           data={visibleData}

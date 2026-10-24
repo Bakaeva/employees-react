@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 import EmployeesListItem from "../employees-list-item/employees-list-item";
-
-import './employees-list.css';
+import { Wrapper } from '../app/app'
 
 const EmployeesList = ({ data, onDelete, onSalaryChange, onToggleProp }) => {
 
@@ -16,10 +16,16 @@ const EmployeesList = ({ data, onDelete, onSalaryChange, onToggleProp }) => {
         );
     });
 
+    const ListWrapper = styled(Wrapper)`
+      padding: 0;
+    `;
+
     return (
-        <ul className="app-list list-group">
-            {elements}
-        </ul>
+        <ListWrapper>
+            <ul className="list-group">
+                {elements}
+            </ul>
+        </ListWrapper>
     );
 };
 

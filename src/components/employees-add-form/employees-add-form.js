@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Wrapper } from '../app/app'
 import './employees-add-form.css';
 
 class EmployeesAddForm extends Component {
@@ -51,7 +52,7 @@ class EmployeesAddForm extends Component {
     render() {
         const { name, salary, errorName, errorSalary } = this.state;
         return (
-            <div className="app-add-form">
+            <Wrapper>
                 <h3>Добавьте нового сотрудника</h3>
                 <form
                     className="add-form d-flex align-items-start"
@@ -83,7 +84,7 @@ class EmployeesAddForm extends Component {
                         className="btn btn-outline-light">Добавить
                     </button>
                 </form >
-            </div >
+            </Wrapper >
         );
     };
 };
